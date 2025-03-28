@@ -17,7 +17,7 @@
 которые могут иметь специфические методы (например, `feed_animal()` для `ZooKeeper`
 и `heal_animal()` для `Veterinarian`).'''
 
-class Animal():
+class Animal:
     def __init__(self, name, age):
         self.name = name
         self.age = age
@@ -29,40 +29,42 @@ class Animal():
         print(f'{self.name} ест')
 
 
-class Bird():
+class Bird(Animal):
     def __init__(self, name, age, beak):
         super().__init__(name, age)
         self.beak = beak
+
     def make_sound(self):
         print(f'{self.name} поёт')
 
-class Mammal():
+
+class Mammal(Animal):
     def __init__(self, name, age, weight):
         super().__init__(name, age)
-        self.weight= weight
-    def make_sound(self):
-        print(f'{self.name}  рычит')
+        self.weight = weight
 
-class Reptile():
+    def make_sound(self):
+        print(f'{self.name} рычит')
+
+
+class Reptile(Animal):
     def __init__(self, name, age, color):
         super().__init__(name, age)
         self.color = color
+
     def make_sound(self):
         print(f'{self.name} шипит')
 
-'''def animals_sound():
+
+def animals_sound():
     animals = [Bird('Витёк', 2, 'Маленький'), Mammal('Барсик', 7, 6), Reptile('Змеюка', 3, 'green')]
     for animal in animals:
         print(animal.make_sound())
-'''
 
 
-bird = Bird('vsvsv', 3, 'svnjvnj')
-
-
-'''animal1 = Animal('Guram', '28')
+animal1 = Animal('Guram', '28')
 animal1.make_sound()
 animal1.eat()
-'''
-'''animals_sound()'''
+
+animals_sound()
 
