@@ -37,7 +37,6 @@ class Bird(Animal):
     def make_sound(self):
         print(f'{self.name} поёт')
 
-
 class Mammal(Animal):
     def __init__(self, name, age, weight):
         super().__init__(name, age)
@@ -45,7 +44,6 @@ class Mammal(Animal):
 
     def make_sound(self):
         print(f'{self.name} рычит')
-
 
 class Reptile(Animal):
     def __init__(self, name, age, color):
@@ -62,9 +60,15 @@ def animals_sound():
         print(animal.make_sound())
 
 
-animal1 = Animal('Guram', '28')
-animal1.make_sound()
-animal1.eat()
+class Zoo():
+    def __init__(self):
+        self.animals = []
+        self.staff = []
 
-animals_sound()
+    def add_animal(self, animal):
+        self.animals.append(animal)
+        print(f'Животное {animal.name} добавлено в зоопарк')
 
+    def add_staff(self, new_staff):
+        self.staff.append(new_staff)
+        print(f'Сотрудник {new_staff} добавлен в зоопарк')
