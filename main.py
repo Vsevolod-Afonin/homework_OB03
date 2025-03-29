@@ -54,8 +54,7 @@ class Reptile(Animal):
         print(f'{self.name} шипит')
 
 
-def animals_sound():
-    animals = [Bird('Витёк', 2, 'Маленький'), Mammal('Барсик', 7, 6), Reptile('Змеюка', 3, 'green')]
+def animals_sound(animals):
     for animal in animals:
         print(animal.make_sound())
 
@@ -71,4 +70,38 @@ class Zoo():
 
     def add_staff(self, new_staff):
         self.staff.append(new_staff)
-        print(f'Сотрудник {new_staff} добавлен в зоопарк')
+        print(f'Сотрудник {new_staff.name} добавлен в зоопарк')
+
+class Zookeeper():
+    def __init__(self, name):
+        self.name = name
+
+    def feed_animal(self, animal):
+        print(f'Сотрудник кормит {animal.name}')
+
+class Veterenarian():
+    def __init__(self, name):
+        self.name = name
+
+    def heel_animal(self, animal):
+        print(f'Сотрудник лечит {animal.name}')
+
+animal1 = Bird('Павлин', 14, 'Средний клюв')
+animal2 = Mammal('Слон', 4, 2675)
+animal3 = Reptile('Питон', 20, 'Зелёный')
+
+zoo = Zoo()
+emploee1 = Zookeeper('Алексей')
+emploee2 = Veterenarian('Дмитрий')
+
+zoo.add_animal(animal1)
+zoo.add_animal(animal2)
+zoo.add_animal(animal3)
+
+zoo.add_staff(emploee1)
+zoo.add_staff(emploee2)
+
+emploee1.feed_animal(animal2)
+emploee2.heel_animal(animal1)
+
+animals_sound(zoo.animals)
