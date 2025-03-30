@@ -105,3 +105,5 @@ emploee1.feed_animal(animal2)
 emploee2.heel_animal(animal1)
 
 animals_sound(zoo.animals)
+
+print('Добавил строку')
